@@ -46,11 +46,11 @@ iguana.uncertainty.get <- function(token,fonte,datainicio,datafim,
 
     }else{
 
-        if(str_extract(outpur)=="error"){
+        if(str_extract(output)=="error"){
 
-        }else if(str_extract(outpur)=="message"){
+        }else if(str_extract(output)=="message"){
 
-        }else if(str_extract(outpur)=="data"){
+        }else if(str_extract(output)=="data"){
 
         }
     }
