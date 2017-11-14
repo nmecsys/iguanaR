@@ -30,7 +30,7 @@ token <- 'k2rt3f5'
 iguana.uncertainty.get <- function(token,fonte,datainicio,datafim,
                                    categoria,output = c("error","message","data")){
 
-    url_base <- 'iguana.incertezalab.com/jornais?token='
+    url_base <- 'http://iguana.incertezalab.com/incerteza?token='
 
     if(missing(token)){
         stop("É preciso inserir um token valido! \n

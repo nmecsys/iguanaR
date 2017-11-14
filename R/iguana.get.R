@@ -21,13 +21,51 @@
 
 
 
-iguana.get <- function(token,fonte,datainicio,datafim,categoria){
-    url_base = 'iguana.incertezalab.com/jornais?token='
+iguana.get <- function(token,fonte,datainicio,datafim,categoria,limite){
+    url_base = 'http://iguana.incertezalab.com/jornais?token='
     if(missing(token)){
         stop("É preciso inserir um token valido! \n Solicite em www.iguana.incertezalab.com/documentation/index.php")
     }else{
         if(missing(fonte) & missing(datainicio) & missing(datafim) & missing(categoria)){
             dados = fromJSON(txt=paste0(url_base,token))
+        }else{
+          params = vector(mode="character")
+          i=1
+          if(!missing(fonte)){
+            param_fonte = paste0("&fonte=",fonte)
+            params[i] = param_fonte
+            i=i+1
+          }
+
+          if(!missing(fonte)){
+            param_datainicio = paste0("&datainicio=",datainicio)
+            params[i] = param_datainicio
+            i=i+1
+          }
+
+          if(!missing(datafim)){
+            param_datafim = paste0("&datafim=",datafim)
+            params[i] = param_datafim
+            i=i+1
+          }
+
+          if(!missing(limite)){
+            param_limite = paste0("&limite=",limite)
+            params[i] = param_limite
+            i=i+1
+          }
+
+          if(!missing(categoria)){
+            param_categoria = paste0("&categoria=",limite)
+            params[i] = param_categoria
+            i=i+1
+          }
+
+          dados = fromJSON(txt=paste0(url_base,token,params))
+          noticias = dados$data
+          noticias$manchete = repair_encoding()
+          noticias$noticia  = repair_encoding()
+
         }
     }
     return(dados$data)

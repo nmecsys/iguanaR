@@ -17,6 +17,7 @@
 
 
 repair_encoding=function (x, from = NULL)  {
+  for(i in 1:4){
     if (!requireNamespace("stringi", quietly = TRUE)) {
         stop("stringi package required for encoding operations")
     }
@@ -29,5 +30,7 @@ repair_encoding=function (x, from = NULL)  {
         }
         #message("Best guess: ", from, " (", conf, "% confident)")
     }
+  }
     stringi::stri_conv(x, from = from)
+
 }
