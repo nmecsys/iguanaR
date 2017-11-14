@@ -10,18 +10,19 @@
 #'  #EXAMPLE1
 #'  }
 #' }
-#' @seealso
+#' @seealson
 #'  \code{\link[stringi]{stri_conv}}
 #' @rdname repair_encoding
-#' @importFrom stringi stri_conv
+#' @importFrom stringi stri_conv guess_encoding
 
 
 repair_encoding=function (x, from = NULL)  {
-  for(i in 1:4){
+
     if (!requireNamespace("stringi", quietly = TRUE)) {
         stop("stringi package required for encoding operations")
     }
     if (is.null(from)) {
+
         best_guess <- guess_encoding(x)[1, , drop = FALSE]
         from <- best_guess$encoding
         conf <- best_guess$confidence * 100
@@ -30,7 +31,8 @@ repair_encoding=function (x, from = NULL)  {
         }
         #message("Best guess: ", from, " (", conf, "% confident)")
     }
-  }
     stringi::stri_conv(x, from = from)
+
+
 
 }

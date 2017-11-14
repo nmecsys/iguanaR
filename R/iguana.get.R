@@ -63,8 +63,8 @@ iguana.get <- function(token,fonte,datainicio,datafim,categoria,limite){
 
           dados = fromJSON(txt=paste0(url_base,token,params))
           noticias = dados$data
-          noticias$manchete = repair_encoding()
-          noticias$noticia  = repair_encoding()
+          noticias$manchete = repair_encoding(noticias$manchete,from="UTF-8")
+          noticias$noticia  = repair_encoding(noticias$noticia,from="UTF-8")
 
         }
     }
