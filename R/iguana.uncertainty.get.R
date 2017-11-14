@@ -37,8 +37,7 @@ iguana.uncertainty.get <- function(token,fonte,datainicio,datafim,
              Solicite em www.iguana.incertezalab.com/documentation/index.php")
     }else{
         if(missing(fonte) & missing(datainicio) & missing(datafim) & missing(categoria)){
-            dados <- httr::GET(paste0(url_base, token))
-            dados <- jsonlite::fromJSON(base::rawToChar(httr::content(dados, 'raw')))
+          dados = fromJSON(txt=paste0(url_base,token))
         }
     }
 
@@ -47,11 +46,11 @@ iguana.uncertainty.get <- function(token,fonte,datainicio,datafim,
 
     }else{
 
-        if(str_extract(outpur)=="error"){
+        if(str_extract(output)=="error"){
 
-        }else if(str_extract(outpur)=="message"){
+        }else if(str_extract(output)=="message"){
 
-        }else if(str_extract(outpur)=="data"){
+        }else if(str_extract(output)=="data"){
 
         }
     }
