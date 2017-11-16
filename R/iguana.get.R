@@ -22,7 +22,7 @@
 
 
 iguana.get <- function(token,fonte,datainicio,datafim,categoria,limite){
-    url_base = 'http://iguana.incertezalab.com/jornais?token='
+    url_base = "http://iguana.incertezalab.com/jornais?token="
     if(missing(token)){
         stop("É preciso inserir um token valido! \n Solicite em www.iguana.incertezalab.com/documentation/index.php")
     }else{
@@ -62,11 +62,12 @@ iguana.get <- function(token,fonte,datainicio,datafim,categoria,limite){
           }
 
           dados = fromJSON(txt=paste0(url_base,token,params))
-          noticias = dados$data
+          dados = fromJSON(dados$Data)
+          noticias = dados
           noticias$manchete = repair_encoding(noticias$manchete,from="UTF-8")
           noticias$noticia  = repair_encoding(noticias$noticia,from="UTF-8")
 
         }
     }
-    return(dados$data)
+    return(noticias)
 }

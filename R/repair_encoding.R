@@ -13,7 +13,7 @@
 #' @seealson
 #'  \code{\link[stringi]{stri_conv}}
 #' @rdname repair_encoding
-#' @importFrom stringi stri_conv guess_encoding
+#' @importFrom stringi stri_conv
 
 
 repair_encoding=function (x, from = NULL)  {

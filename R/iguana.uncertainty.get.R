@@ -20,12 +20,11 @@
 #'  \code{\link[base]{rawToChar}}
 #' @rdname iguana.uncertainty.get
 #' @export
-#' @importFrom httr GET content
 #' @importFrom jsonlite fromJSON
 #' @importfrom  stringr str_extract
 
 
-token <- 'k2rt3f5'
+
 
 iguana.uncertainty.get <- function(token,fonte,datainicio,datafim,
                                    categoria,output = c("error","message","data")){

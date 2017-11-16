@@ -4,7 +4,7 @@
 \alias{iguana.get}
 \title{Get data from the Iguana API}
 \usage{
-iguana.get(token, fonte, datainicio, datafim, categoria)
+iguana.get(token, fonte, datainicio, datafim, categoria, limite)
 }
 \arguments{
 \item{token}{A \code{string}. The access code to use Iguana API}

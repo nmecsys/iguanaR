@@ -27,6 +27,3 @@ if(interactive()){
  }
 }
 }
-\seealso{
-\code{\link[stringi]{stri_conv}}
-}
