@@ -2,7 +2,7 @@ Package: iguanaR
 Type: Package
 Title: What the Package Does (Title Case)
 Version: 0.0.98
-Author: Jonathan Azevedo <jonatha.costa@fgv.br>, Fernando Ormonde <fernando.texeira@fgv.br>
+Author: Jonatha Azevedo <jonatha.costa@fgv.br>, Fernando Ormonde <fernando.texeira@fgv.br>
          Henrique Almeida <henrique.almeida@fgv.br>
 Maintainer: Jonatha Azevedo <jonatha.costa@fgv.br>
 Description: Make R connection with Iguana API. Iguana is a endpoint to request news to analyze and ...
