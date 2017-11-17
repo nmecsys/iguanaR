@@ -1,12 +1,12 @@
 Package: iguanaR
 Type: Package
 Title: What the Package Does (Title Case)
-Version: 0.1.0
-Author: Who wrote it
-Maintainer: The package maintainer <yourself@somewhere.net>
-Description: More about what it does (maybe more than one line)
-    Use four spaces when indenting paragraphs within the Description.
-License: What license is it under?
+Version: 0.0.98
+Author: Jonathan Azevedo <jonatha.costa@fgv.br>, Fernando Ormonde <fernando.texeira@fgv.br>
+         Henrique Almeida <henrique.almeida@fgv.br>
+Maintainer: Jonatha Azevedo <jonatha.costa@fgv.br>
+Description: Make R connection with Iguana API. Iguana is a endpoint to request news to analyze and ...
+License: MIT
 Imports: stringr, jsonlite, parallel
 Encoding: UTF-8
 LazyData: true
