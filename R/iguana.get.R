@@ -9,7 +9,7 @@
 #' @details DETAILS
 #' @keywords get news
 #' @importFrom stringr str_extract
-#' @imporfrom jsonlite fromJSON
+#' @importFrom jsonlite fromJSON
 #' @examples
 #' \dontrun{
 #' if(interactive()){

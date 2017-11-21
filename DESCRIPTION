@@ -7,7 +7,7 @@ Author: Jonatha Azevedo <jonatha.costa@fgv.br>, Fernando Ormonde <fernando.texei
 Maintainer: Jonatha Azevedo <jonatha.costa@fgv.br>
 Description: Make R connection with Iguana API. Iguana is a endpoint to request news to analyze and ...
 License: MIT
-Imports: stringr, jsonlite, parallel
+Imports: stringr, jsonlite, parallel, DBI, RMySQL
 Encoding: UTF-8
 LazyData: true
 RoxygenNote: 6.0.1
