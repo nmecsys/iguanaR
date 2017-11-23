@@ -4,6 +4,7 @@
 #' @param fonte PARAM_DESCRIPTION
 #' @param datainicio PARAM_DESCRIPTION
 #' @param datafim PARAM_DESCRIPTION
+#' @param limite PARAM_DESCRIPTION
 #' @param categoria PARAM_DESCRIPTION
 #' @param output PARAM_DESCRIPTION, Default: c("error", "message", "data")
 #' @return OUTPUT_DESCRIPTION
@@ -26,7 +27,7 @@
 
 
 
-iguana.uncertainty.get <- function(token,fonte,datainicio,datafim,
+iguana.uncertainty.get <- function(token,fonte,datainicio,limite,datafim,
                                    categoria = c("Cotidiano", "Educacao", "Esporte", "Poder", "Mundo", "Ilustrada", "Mercado", "Ciencia", "Equilibrio", "Turismo", "BBC Brasil", "Tec", "Podcasts", "Veiculos", "Colunistas", "Opiniao","Comida", 
        "Imoveis", "Negocios","Especial", "Equilibrio e Saude","Ambiente", "Empregos", "Folha Corrida")){
 
