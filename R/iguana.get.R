@@ -21,7 +21,8 @@
 
 
 
-iguana.get <- function(token,fonte,datainicio,datafim,categoria,limite){
+iguana.get <- function(token,fonte,datainicio,datafim,limite,categoria = c("Cotidiano", "Educacao", "Esporte", "Poder", "Mundo", "Ilustrada", "Mercado", "Ciencia", "Equilibrio", "Turismo", "BBC Brasil", "Tec", "Podcasts", "Veiculos", "Colunistas", "Opiniao","Comida", 
+       "Imoveis", "Negocios","Especial", "Equilibrio e Saude","Ambiente", "Empregos", "Folha Corrida")){
     url_base = "http://iguana.incertezalab.com/jornais?token="
     if(missing(token)){
         stop("É preciso inserir um token valido! \n Solicite em www.iguana.incertezalab.com/documentation/index.php")
@@ -46,7 +47,12 @@ iguana.get <- function(token,fonte,datainicio,datafim,categoria,limite){
             params[i] = param_datafim
             i=i+1
           }
-
+            
+        if(length(categoria)== 1){
+            param_categoria = paste0("%categoria",categoria,collapse="")
+            i=i+1
+        }
+        
           if(!missing(limite)){
             param_limite = paste0("&limite=",limite)
             params[i] = param_limite
