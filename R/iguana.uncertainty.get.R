@@ -27,7 +27,7 @@
 
 
 iguana.uncertainty.get <- function(token,fonte,datainicio,datafim,
-                                   categoria,output = c("error","message","data")){
+                                   categoria){
 
     url_base <- 'http://iguana.incertezalab.com/incerteza?token='
 
