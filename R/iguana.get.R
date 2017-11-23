@@ -59,11 +59,7 @@ iguana.get <- function(token,fonte,datainicio,datafim,limite,categoria = c("Coti
             i=i+1
           }
 
-          if(!missing(categoria)){
-            param_categoria = paste0("&categoria=",limite)
-            params[i] = param_categoria
-            i=i+1
-          }
+         
 
           dados = fromJSON(txt=paste0(url_base,token,params,collapse = ""))
           noticias = dados$data
