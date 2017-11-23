@@ -27,7 +27,8 @@
 
 
 iguana.uncertainty.get <- function(token,fonte,datainicio,datafim,
-                                   categoria){
+                                   categoria = c("Cotidiano", "Educacao", "Esporte", "Poder", "Mundo", "Ilustrada", "Mercado", "Ciencia", "Equilibrio", "Turismo", "BBC Brasil", "Tec", "Podcasts", "Veiculos", "Colunistas", "Opiniao","Comida", 
+       "Imoveis", "Negocios","Especial", "Equilibrio e Saude","Ambiente", "Empregos", "Folha Corrida")){
 
     url_base <- 'http://iguana.incertezalab.com/incerteza?token='
 
@@ -37,21 +38,51 @@ iguana.uncertainty.get <- function(token,fonte,datainicio,datafim,
     }else{
         if(missing(fonte) & missing(datainicio) & missing(datafim) & missing(categoria)){
           dados = fromJSON(txt=paste0(url_base,token))
-        }
-    }
+        }else{
+    
 
+       params = vector(mode="character")
+          i=1
+  
+       if(!missing(datainicio)){
+            param_datainicio = paste0("&datainicio=",datainicio)
+            params[i] = param_datainicio
+            i=i+1
+          }
 
-    if(length(output) == 3){
+          if(!missing(datafim)){
+            param_datafim = paste0("&datafim=",datafim)
+            params[i] = param_datafim
+            i=i+1
+          }
+  
 
-    }else{
+   if(length(categoria)== 1){
+            param_categoria = paste0("%categoria",categoria,collapse="")
+            i=i+1
+        }     
+  
+  if(!missing(limite)){
+            param_limite = paste0("&limite=",limite)
+            params[i] = param_limite
+            i=i+1
+          }
 
-        if(str_extract(output)=="error"){
-
-        }else if(str_extract(output)=="message"){
-
-        }else if(str_extract(output)=="data"){
-
-        }
-    }
-    return(dados$data)
+          
+          dados = fromJSON(txt=paste0(url_base,token,params,collapse = ""))
+          noticias = dados$data
+          noticias$manchete = iconv(repair_encoding(noticias$manchete,from="UTF-8"),from="UTF-8",to= "latin1")
+          noticias$manchete = repair_encoding(noticias$manchete,from="latin1")
+          noticias$noticia  = iconv(repair_encoding(noticias$noticia,from="UTF-8"),from="UTF-8",to="latin1")
+          noticias$noticia = repair_encoding(noticias$noticia,from="latin1")
+          
+          
+          
+     }
+  }
+  
+  
+  
+  
+    return(dados$noticia)
 }
