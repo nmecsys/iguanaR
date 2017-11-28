@@ -4,7 +4,12 @@
 \alias{iguana.get}
 \title{Get data from the Iguana API}
 \usage{
-iguana.get(token, fonte, datainicio, datafim, categoria, limite)
+iguana.get(token, fonte, datainicio, datafim, limite,
+  categoria = c("Cotidiano", "Educacao", "Esporte", "Poder", "Mundo",
+  "Ilustrada", "Mercado", "Ciencia", "Equilibrio", "Turismo", "BBC Brasil",
+  "Tec", "Podcasts", "Veiculos", "Colunistas", "Opiniao", "Comida", "Imoveis",
+  "Negocios", "Especial", "Equilibrio e Saude", "Ambiente", "Empregos",
+  "Folha Corrida"))
 }
 \arguments{
 \item{token}{A \code{string}. The access code to use Iguana API}

@@ -21,7 +21,7 @@
 
 
 
-iguana.get <- function(token,fonte,datainicio,datafim,limite,categoria = c("Cotidiano", "Educacao", "Esporte", "Poder", "Mundo", "Ilustrada", "Mercado", "Ciencia", "Equilibrio", "Turismo", "BBC Brasil", "Tec", "Podcasts", "Veiculos", "Colunistas", "Opiniao","Comida", 
+iguana.get <- function(token,fonte,datainicio,datafim,limite,categoria = c("Cotidiano", "Educacao", "Esporte", "Poder", "Mundo", "Ilustrada", "Mercado", "Ciencia", "Equilibrio", "Turismo", "BBC Brasil", "Tec", "Podcasts", "Veiculos", "Colunistas", "Opiniao","Comida",
        "Imoveis", "Negocios","Especial", "Equilibrio e Saude","Ambiente", "Empregos", "Folha Corrida")){
     url_base = "http://iguana.incertezalab.com/jornais?token="
     if(missing(token)){
@@ -47,28 +47,24 @@ iguana.get <- function(token,fonte,datainicio,datafim,limite,categoria = c("Coti
             params[i] = param_datafim
             i=i+1
           }
-            
+
         if(length(categoria)== 1){
             param_categoria = paste0("%categoria",categoria,collapse="")
             i=i+1
         }
-        
+
           if(!missing(limite)){
             param_limite = paste0("&limite=",limite)
             params[i] = param_limite
             i=i+1
           }
 
-         
+
 
           dados = fromJSON(txt=paste0(url_base,token,params,collapse = ""))
           noticias = dados$data
-          noticias$manchete = iconv(repair_encoding(noticias$manchete,from="UTF-8"),from="UTF-8",to= "latin1")
-          noticias$manchete = repair_encoding(noticias$manchete,from="latin1")
-          noticias$noticia  = iconv(repair_encoding(noticias$noticia,from="UTF-8"),from="UTF-8",to="latin1")
-          noticias$noticia = repair_encoding(noticias$noticia,from="latin1")
-
-
+           noticias$manchete = repair_encoding(noticias$manchete,from="UTF-8")
+           noticias$noticia  = repair_encoding(noticias$noticia,from="UTF-8")
     }
     return(noticias)
 }

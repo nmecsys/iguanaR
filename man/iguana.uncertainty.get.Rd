@@ -4,8 +4,12 @@
 \alias{iguana.uncertainty.get}
 \title{Get uncertainty data from the Iguana API}
 \usage{
-iguana.uncertainty.get(token, fonte, datainicio, datafim, categoria,
-  output = c("error", "message", "data"))
+iguana.uncertainty.get(token, fonte, datainicio, limite, datafim,
+  categoria = c("Cotidiano", "Educacao", "Esporte", "Poder", "Mundo",
+  "Ilustrada", "Mercado", "Ciencia", "Equilibrio", "Turismo", "BBC Brasil",
+  "Tec", "Podcasts", "Veiculos", "Colunistas", "Opiniao", "Comida", "Imoveis",
+  "Negocios", "Especial", "Equilibrio e Saude", "Ambiente", "Empregos",
+  "Folha Corrida"))
 }
 \arguments{
 \item{token}{A \code{string}. The access code to use Iguana API}
@@ -13,6 +17,8 @@ iguana.uncertainty.get(token, fonte, datainicio, datafim, categoria,
 \item{fonte}{PARAM_DESCRIPTION}
 
 \item{datainicio}{PARAM_DESCRIPTION}
+
+\item{limite}{PARAM_DESCRIPTION}
 
 \item{datafim}{PARAM_DESCRIPTION}
 
