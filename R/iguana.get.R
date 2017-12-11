@@ -50,6 +50,7 @@ iguana.get <- function(token,fonte,datainicio,datafim,limite,categoria = c("Coti
 
         if(length(categoria)== 1){
             param_categoria = paste0("%categoria",categoria,collapse="")
+            params[i] = param_categoria
             i=i+1
         }
 
@@ -60,11 +61,11 @@ iguana.get <- function(token,fonte,datainicio,datafim,limite,categoria = c("Coti
           }
 
 
-
-          dados = fromJSON(txt=paste0(url_base,token,params,collapse = ""))
+          parametros = paste0(params,collapse = "")
+          dados = fromJSON(txt=paste0(url_base,token,parametros))
           noticias = dados$data
-           noticias$manchete = repair_encoding(noticias$manchete,from="UTF-8")
-           noticias$noticia  = repair_encoding(noticias$noticia,from="UTF-8")
+          noticias$manchete = repair_encoding(noticias$manchete,from="UTF-8")
+          noticias$noticia  = repair_encoding(noticias$noticia,from="UTF-8")
     }
     return(noticias)
 }
