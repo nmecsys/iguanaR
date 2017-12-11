@@ -43,32 +43,33 @@ iguana.uncertainty.get <- function(token,fonte,datainicio,limite,datafim,
     
 
        params = vector(mode="character")
-          i=1
+          i = 1
   
        if(!missing(datainicio)){
             param_datainicio = paste0("&datainicio=",datainicio)
             params[i] = param_datainicio
-            i=i+1
+            i = i+1
           }
 
           if(!missing(datafim)){
             param_datafim = paste0("&datafim=",datafim)
             params[i] = param_datafim
-            i=i+1
+            i = i+1
           }
   
 
    if(length(categoria)== 1){
             param_categoria = paste0("%categoria",categoria,collapse="")
-            i=i+1
+            i = i+1
         }     
   
   if(!missing(limite)){
             param_limite = paste0("&limite=",limite)
             params[i] = param_limite
-            i=i+1
+            i = i+1
           }
-
+    params[i] = paste0("&nemc=",1)
+            i = i+1
           
           dados = fromJSON(txt=paste0(url_base,token,params,collapse = ""))
           noticias = dados$data
