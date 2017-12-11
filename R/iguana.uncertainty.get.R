@@ -45,6 +45,13 @@ iguana.uncertainty.get <- function(token,fonte,datainicio,limite,datafim,
        params = vector(mode="character")
           i = 1
 
+          if(!missing(fonte)){
+            param_fonte = paste0("&fonte=",fonte)
+            params[i] = param_fonte
+            i=i+1
+          }
+
+
        if(!missing(datainicio)){
             param_datainicio = paste0("&datainicio=",datainicio)
             params[i] = param_datainicio

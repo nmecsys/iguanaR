@@ -21,7 +21,7 @@
 
 
 
-iguana.get <- function(token,fonte,datainicio,datafim,limite,categoria = c("Cotidiano", "Educacao", "Esporte", "Poder", "Mundo", "Ilustrada", "Mercado", "Ciencia", "Equilibrio", "Turismo", "BBC Brasil", "Tec", "Podcasts", "Veiculos", "Colunistas", "Opiniao","Comida",
+iguana.get <- function(token,fonte,incerteza,datainicio,datafim,limite,categoria = c("Cotidiano", "Educacao", "Esporte", "Poder", "Mundo", "Ilustrada", "Mercado", "Ciencia", "Equilibrio", "Turismo", "BBC Brasil", "Tec", "Podcasts", "Veiculos", "Colunistas", "Opiniao","Comida",
        "Imoveis", "Negocios","Especial", "Equilibrio e Saude","Ambiente", "Empregos", "Folha Corrida")){
     url_base = "http://iguana.incertezalab.com/jornais?token="
     if(missing(token)){
@@ -59,6 +59,12 @@ iguana.get <- function(token,fonte,datainicio,datafim,limite,categoria = c("Coti
             params[i] = param_limite
             i=i+1
           }
+
+      if(!missing(incerteza)){
+        param_incerteza = paste0("&incerteza=",incerteza)
+        params[i] = param_incerteza
+        i=i+1
+      }
 
 
           parametros = paste0(params,collapse = "")
