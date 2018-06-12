@@ -1,6 +1,6 @@
 # iguanaR
 Pacote que conecta o R a API Iguana
-[](http://iguana.incertezalab.com/)
+[site com a documentação](http://iguana.incertezalab.com/)
 # Instalação
 
 ```
