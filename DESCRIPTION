@@ -1,13 +1,17 @@
 Package: iguanaR
 Type: Package
 Title: Bring balance to the force 
-Version: 0.0.98
-Author: Jonatha Azevedo <jonatha.costa@fgv.br>, Fernando Ormonde <fernando.texeira@fgv.br>
-         Henrique Almeida <henrique.almeida@fgv.br>
+Version: 0.0.99
+Date: 2018-06-12
+Author: Jonatha Azevedo <jonatha.costa@fgv.br>
 Maintainer: Jonatha Azevedo <jonatha.costa@fgv.br>
+Depends: R (>= 3.4)
 Description: Make R connection with Iguana API. Iguana is a endpoint to request news to analyze and ...
 License: MIT
 Imports: stringr, jsonlite, parallel, DBI, RMySQL
+BugReports: https://github.com/nmecsys/iguanaR/issues
+URL: http://iguana.incertezalab.com/
 Encoding: UTF-8
 LazyData: true
+NeedsCompilation: no
 RoxygenNote: 6.0.1
