@@ -1,7 +1,7 @@
 # iguanaR
 Pacote que conecta o R a API Iguana
-
-#Instalação
+[](http://iguana.incertezalab.com/)
+# Instalação
 
 ```
 install.packages("devtools")
@@ -10,4 +10,4 @@ install_github("nmecsys/iguanaR")
 require(iguanaR)
 ```
 
-#Basic Usage
+# Basic Usage
